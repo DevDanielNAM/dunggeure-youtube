@@ -9,7 +9,7 @@ const PORT = 3000;
 
 // 허용할 클라이언트 도메인 목록
 const allowedOrigins = [
-  "http://localhost:3000",
+  "https://cafe.naver.com",
   "https://cafe.naver.com/dunggeure",
 ];
 
