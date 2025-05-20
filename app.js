@@ -11,6 +11,7 @@ const PORT = 3000;
 const allowedOrigins = [
   "https://cafe.naver.com",
   "https://cafe.naver.com/dunggeure",
+  "https://regulatory-jo-ann-devdanielnam-9645cb09.koyeb.app/",
 ];
 
 // CORS 설정
