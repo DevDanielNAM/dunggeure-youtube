@@ -7,6 +7,9 @@ const axios = require("axios");
 const app = express();
 const PORT = 3000;
 
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
+const CHANNEL_ID = process.env.CHANNEL_ID;
+
 // 허용할 클라이언트 도메인 목록
 const allowedOrigins = [
   "https://cafe.naver.com",
@@ -42,7 +45,7 @@ app.use((req, res, next) => {
 // 최신 유튜브 동영상 embed URL로 리다이렉트
 app.get("/get/dunggeure-cafe-gate-youtube", async (req, res) => {
   try {
-    const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${process.env.YOUTUBE_API_KEY}&channelId=${process.env.CHANNEL_ID}&part=snippet,id&order=date&maxResults=1&type=video`;
+    const apiUrl = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1&type=video`;
     const response = await axios.get(apiUrl);
     const videoId = response.data.items[0].id.videoId;
 
